@@ -1,0 +1,18 @@
+.PageTitle {
+  position: relative;
+  width: 100vw;
+  min-height: auto;
+  background-color: var(--color-ui-orange);
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    font-family: 'Faktum-bold';
+    position: relative;
+    z-index: 9;
+    color: var(--color-ui-yellow);
+    font-size: 55px;
+    line-height: 65px;
+    padding: var(--spacing-bloc-x-large) 0;
+  }
+}

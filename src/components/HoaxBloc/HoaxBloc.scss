@@ -1,0 +1,137 @@
+.HoaxBloc {
+  background-color: black;
+  opacity: 0;
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  overflow: hidden;
+
+  &-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .Wrapper {
+    display: flex;
+    gap: var(--spacing-bloc-standards);
+
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+
+      .HoaxBloc-title {
+        left: 8%;
+        margin: var(--spacing-bloc-standard) 0;
+      }
+
+      .HoaxBloc-texte {
+        margin: 0;
+
+        .ButtonMain {
+          width: 100%;
+          margin-bottom: var(--spacing-bloc-standard);
+        }
+      }
+    }
+
+    > div {
+      flex: 1;
+    }
+  }
+
+  &-title {
+    margin: var(--spacing-bloc-x-large) 0;
+    position: relative;
+
+    &--up{
+      width: 86%;
+      transform: scale(1.5);
+      opacity: 0;
+    }
+
+    &--down{
+      width: 48%;
+      margin-top: 3%;
+      margin-left: 33%;
+      transform: scale(1.5);
+      opacity: 0;
+    }
+
+    &--logo{
+      position: absolute;
+      width: 16%;
+      left: 0;
+      bottom: 6%;
+      transform: translateY(100px);
+      opacity: 0;
+    }
+  }
+
+  &-texte {
+    color: white;
+    font-size: 22px;
+    line-height: 31px;
+    margin: var(--spacing-bloc-x-large) 0;
+    transform: translateY(200px);
+    opacity: 0;
+
+    p {
+      margin: var(--spacing-bloc-standard) 0;
+    }
+
+    &-bold {
+      font-family: 'Faktum-Medium';
+    }
+  }
+}
+
+.enter-done,
+.enter {
+  .HoaxBloc {
+    transition: opacity 2s ease;
+    transition-delay: 0.5s;
+    opacity: 1;
+    height: auto;
+
+    .HoaxBloc-title--up {
+      transition: opacity .5s ease, transform .5s cubic-bezier(.47,1.64,.41,.8);
+      transition-delay: 1s;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .HoaxBloc-title--down {
+      transition: opacity .5s ease, transform .5s cubic-bezier(.47,1.64,.41,.8);
+      transition-delay: 1.5s;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .HoaxBloc-title--logo {
+      transition: opacity .5s ease, transform .5s ease;
+      transition-delay: 2s;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .HoaxBloc-texte {
+      transition: opacity .5s ease, transform .5s ease;
+      transition-delay: 2s;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.enter-done {
+  .HoaxBloc {
+    position: relative;
+  }
+}

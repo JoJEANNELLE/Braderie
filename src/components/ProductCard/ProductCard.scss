@@ -1,0 +1,222 @@
+.ProductCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  color: black;
+  text-align: center;
+  align-items: center;
+
+  &:hover {
+
+    .ProductCard-visual-hover {
+      opacity: 1;
+
+      p {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+  }
+
+  &-visual {
+    overflow: hidden;
+    position: relative;
+    margin: var(--spacing-bloc-small);
+    width: 100%;
+    aspect-ratio: 1/1.214;
+    @supports not (aspect-ratio: 1/1.214) {
+      &::before {
+        float: left;
+        padding-top: 121.4%;
+        content: "";
+      }
+    }
+    background-color: var(--color-grey-light);
+
+    &.Load {
+      img {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      border: solid white 2px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      top: -1px;
+      left: -1px;
+      z-index: 2;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    span {
+      z-index: 2;
+      position: absolute;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .Color--blue {
+      background-color: var(--color-ui-blue);
+
+      p {
+        color: var(--color-ui-lavender);
+      }
+    }
+
+    .Color--yellow {
+      background-color: var(--color-ui-yellow);
+
+      p {
+        color: var(--color-ui-blue);
+      }
+    }
+
+    .Color--burgundy {
+      background-color: var(--color-ui-burgundy);
+
+      p {
+        color: var(--color-ui-lavender);
+      }
+    }
+
+    .Color--orange {
+      background-color: var(--color-ui-orange);
+
+      p {
+        color: var(--color-ui-blue);
+      }
+    }
+
+    .Color--teal {
+      background-color: var(--color-ui-teal);
+
+      p {
+        color: var(--color-ui-blue);
+      }
+    }
+
+    .Color--pink {
+      background-color: var(--color-ui-pink);
+
+      p {
+        color: var(--color-ui-burgundy);
+      }
+    }
+
+    .Color--purple {
+      background-color: var(--color-ui-purple);
+
+      p {
+        color: var(--color-ui-yellow);
+      }
+    }
+
+    .Color--green {
+      background-color: var(--color-ui-green);
+
+      p {
+        color: var(--color-ui-teal);
+      }
+    }
+
+    &-hover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity .75s ease;
+
+      p {
+        position: relative;
+        font-size: 28px;
+        line-height: 34px;
+        font-family: 'Faktum-Medium';
+        padding: var(--spacing-bloc-standard);
+        transform: translateY(50px);
+        opacity: 0;
+        transition: transform .75s ease, opacity .75s ease;
+        transition-delay: .15s;
+      }
+    }
+  }
+
+  &-tag {
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Faktum-Bold';
+    letter-spacing: 2px;
+    font-size: 12px;
+    line-height: 17px;
+    margin: var(--spacing-bloc-x-x-small);
+
+    &--offer {
+      color: var(--color-grey-dark);
+      margin-top: 0;
+    }
+  }
+
+  &-name {
+    margin: var(--spacing-bloc-x-x-small);
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &-price {
+    margin: var(--spacing-bloc-x-x-small);
+    margin-top: 0;
+    font-family: 'Faktum-Bold';
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    gap: var(--spacing-bloc-x-small);
+    justify-content: center;
+    color: var(--color-ui-red);
+
+    &--crossed {
+      position: relative;
+      color: black;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        top: calc(50% - 1px);
+        left: 0;
+      }
+    }
+  }
+
+  &-reduction {
+    width: fit-content;
+    margin: var(--spacing-bloc-x-x-small);
+    padding: var(--spacing-bloc-x-x-small) var(--spacing-bloc-x-small);
+    background-color: var(--color-ui-red);
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 60px;
+  } 
+}

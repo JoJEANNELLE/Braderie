@@ -1,0 +1,29 @@
+.ButtonMain {
+  border: solid 2px black;
+  font-family: 'Faktum-Regular';
+  font-size: 18px;
+  padding: calc(var(--spacing-bloc-small) - 2px) var(--spacing-bloc-large)
+    calc(var(--spacing-bloc-small) + 2px) var(--spacing-bloc-large);
+  background-color: black;
+  color: white;
+  border-radius: 100px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all .25s ease;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  &.Inverse {
+    border: solid 2px white;
+    background-color: white;
+    color: black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}

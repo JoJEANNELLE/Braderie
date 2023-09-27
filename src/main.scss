@@ -1,0 +1,282 @@
+:root {
+  --color-ui-orange: #ff5244;
+  --color-ui-purple: #b44fba;
+  --color-ui-lavender: #FEDFF7;
+  --color-ui-yellow: #FEDD66;
+  --color-ui-red: #FC333D;
+  --color-ui-cyan: #DBF0F5;
+  --color-ui-teal: #7BE5B6;
+  --color-ui-green: #116034;
+  --color-ui-blue: #223EA6;
+  --color-ui-pink: #FEDFF7;
+  --color-ui-burgundy: #901F2E;
+
+  --color-grey-light: #E1E4F0;
+  --color-grey-semi: #D9D9D9;
+  --color-grey-dark: #9c9c9c;
+
+  --spacing-bloc-x-large: 96px;
+  --spacing-bloc-large: 64px;
+  --spacing-bloc-standard: 32px;
+  --spacing-bloc-x-standard: 24px;
+  --spacing-bloc-small: 16px;
+  --spacing-bloc-x-small: 8px;
+  --spacing-bloc-x-x-small: 4px;
+}
+
+@font-face {
+  font-family: "Faktum-Bold";
+  src:
+    url("./assets/fonts/Faktum-Bold.otf") format("opentype"),
+    url("./assets/fonts/Faktum-Bold..woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Faktum-Medium";
+  src:
+    url("./assets/fonts/Faktum-Medium.otf") format("opentype"),
+    url("./assets/fonts/Faktum-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Faktum-Regular";
+  src:
+    url("./assets/fonts/Faktum-Regular.otf") format("opentype"),
+    url("./assets/fonts/Faktum-Regular.woff2") format("woff2");
+}
+
+body {
+  width: 100%;
+  color: black;
+  font-family: 'Faktum-Regular';
+}
+
+.Wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.Page {
+  position: relative;
+
+  &--header {
+    margin-top: 200px;
+  }
+
+  &--footer {
+    border-bottom: 2px solid var(--color-grey-light);
+  }
+
+  &--bg {
+    background-color: var(--color-grey-semi);
+  }
+}
+
+.Logo {
+  position: absolute;
+  z-index: 5;
+  left: 50px;
+  top: 50px;
+
+  @media only screen and (max-width: 500px) {
+    left: 10%;
+  }
+
+  img {
+    width: auto;
+
+    &.White {
+      height: 106px;
+    }
+
+    &.Black {
+      height: 77px;
+
+      @media only screen and (max-width: 500px) {
+        width: 57vw;
+        height: auto;
+      }
+    }
+  }
+}
+
+.Edito {
+  width: 100%;
+  max-width: 800px;
+  margin: var(--spacing-bloc-large) auto;
+
+  h2 {
+    font-size: 45px;
+    line-height: 50px;
+    margin: var(--spacing-bloc-large) 0;
+  }
+
+  h3 {
+    font-family: 'Faktum-bold';
+    font-size: 25px;
+    line-height: 30px;
+    margin: var(--spacing-bloc-standard) 0;
+  }
+
+  p {
+    margin: var(--spacing-bloc-standard) 0;
+    font-size: 18px;
+    line-height: 38px;
+
+    strong {
+      font-family: 'Faktum-bold';
+    }
+  }
+
+  a {
+    color: var(--color-ui-purple);
+    font-family: 'Faktum-bold';
+    cursor: pointer;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
+
+
+.init {
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: 0.25s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: 0.25s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+// Count
+.Count {
+  position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 110px);
+  background-color: var(--color-ui-orange);
+  display: flex;
+  flex-direction: column;
+
+  &-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  &-logo {
+    position: absolute;
+    width: 64px;
+    top: 50px;
+    left: 50px;
+  }
+
+  &-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 200px auto 90px auto;
+    max-width: calc(100vw - 100px);
+    justify-content: space-between;
+    gap: var(--spacing-bloc-large);
+
+
+    @media only screen and (max-width: 950px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &-title {
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-timer {
+    font-family: "Faktum-Bold";
+    display: flex;
+    font-size: 7vw;
+    gap: 1vw;
+    color: var(--color-ui-yellow);
+    text-align: center;
+    text-shadow: var(--color-ui-burgundy) -.5vw .5vw;
+
+    @media only screen and (max-width: 950px) {
+      font-size: 12vw;
+      gap: .5vw;
+    }
+
+    &--numb {
+      width: 9vw;
+
+      @media only screen and (max-width: 950px) {
+        width: 16vw;
+      }
+    }
+
+
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: .0;
+      transform: translateY(100px);
+      
+      span {
+        font-family: "Faktum-Regular";
+        font-size: 18px;
+        text-shadow: none;
+
+        @media only screen and (max-width: 950px) {
+          display: none;
+        }
+      }
+    }
+
+    &.Active {
+      li {
+        transition: opacity .35s ease, transform .35s ease-out;
+        opacity: 1;
+        transform: translateY(0);
+
+        &:nth-child(1) { transition-delay: .0s; }
+        &:nth-child(2) { transition-delay: .05s; }
+        &:nth-child(3) { transition-delay: .1s; }
+        &:nth-child(4) { transition-delay: .15s; }
+        &:nth-child(5) { transition-delay: .2s; }
+        &:nth-child(6) { transition-delay: .25s; }
+        &:nth-child(7) { transition-delay: .3s; }
+      }
+    }
+  }
+}

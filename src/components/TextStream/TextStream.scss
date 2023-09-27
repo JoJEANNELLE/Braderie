@@ -1,0 +1,32 @@
+.TextStream {
+  position: relative;
+  width: 100vw;
+  min-height: 110px;
+  background-color: var(--color-ui-yellow);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &-content {
+    white-space: nowrap;
+    margin: 0 2em;
+  }
+
+  &-flow {
+    display: flex;
+    gap: 0;
+    animation: scrollText 25s infinite linear;
+
+    p {
+      font-size: 40px;
+      letter-spacing: 2px;
+      font-family: 'Faktum-Regular';
+      color: var(--color-ui-purple);
+    }
+  }
+
+  @keyframes scrollText {
+    from   { transform: translateX(0%); }
+    to { transform: translateX(-50%); }
+  }
+}

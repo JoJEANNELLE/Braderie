@@ -1,0 +1,41 @@
+.ErrorBloc {
+  position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 352px);
+  height: auto;
+  background-color: var(--color-ui-green);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    padding: var(--spacing-bloc-large) 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &-code {
+    font-family: 'Faktum-Bold';
+    color: var(--color-ui-lavender);
+    font-size: 300px;
+
+    @media only screen and (max-width: 650px) {
+      font-size: 30vw;
+    }
+  }
+
+  &-message {
+    font-family: 'Faktum-Medium';
+    color: var(--color-ui-lavender);
+    font-size: 22px;
+  }
+
+  .ButtonMain {
+    margin-top: var(--spacing-bloc-small);
+  }
+}

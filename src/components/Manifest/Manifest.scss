@@ -1,0 +1,19 @@
+.Manifest {
+  width: 100%;
+  padding: var(--spacing-bloc-x-large) 0;
+
+  p {
+    font-size: 51px;
+    line-height: 61px;
+    letter-spacing: -2px;
+
+    @media only screen and (max-width: 650px) {
+      font-size: 35px;
+      line-height: 45px;
+    }
+
+    &.Manifest-title {
+      font-family: 'Faktum-Medium';
+    }
+  }
+}

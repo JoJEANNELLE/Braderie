@@ -1,0 +1,23 @@
+.CrossBloc {
+  margin-bottom: var(--spacing-bloc-x-large);
+
+  &-title {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin: var(--spacing-bloc-large) 0;
+  }
+
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-bloc-small);
+    justify-content: space-around;
+  }
+
+  &-item {
+    max-width: 340px;
+    width: 100%;
+  }
+}
